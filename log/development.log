@@ -1,2 +1,16 @@
   [1m[35m (1130.2ms)[0m  [1m[35mCREATE DATABASE "blog_app_development" ENCODING = 'unicode'[0m
   [1m[35m (215.8ms)[0m  [1m[35mCREATE DATABASE "blog_app_test" ENCODING = 'unicode'[0m
+Started GET "/" for 127.0.0.1 at 2022-11-22 09:59:33 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/promise/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/promise/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 11.7ms | Allocations: 635)
+Completed 200 OK in 101ms (Views: 32.6ms | ActiveRecord: 0.0ms | Allocations: 5095)
+
+
+Started GET "/" for 127.0.0.1 at 2022-11-22 09:59:35 -0500
+Processing by Rails::WelcomeController#index as */*
+  Rendering /home/promise/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/promise/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.8ms | Allocations: 297)
+Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 0.0ms | Allocations: 1060)
+
+
