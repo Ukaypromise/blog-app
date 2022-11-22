@@ -57,38 +57,26 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 [Blog App ] <a name="blog-app"></a>
 
-> Describe your project in 1 or 2 sentences.
+> The Blog app will be a classic example of a blog website. 
 
-**[your_project__name]** is a...
+**[Blog App]** is a blog site app is a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts. The app will also have an admin section where the site owner can create, edit, and delete posts and comments(a future feature to be added).
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> Describe the tech stack and include only the relevant sections that apply to your project.
+> The tech stack for building this project was Ruby on Rails
 
 <details>
-  <summary>Client</summary>
+  <summary>Framework</summary>
   <ul>
-    <li><a href="https://reactjs.org/">React.js</a></li>
+    <li><a href="https://guides.rubyonrails.org/getting_started.html">Ruby on Rails</a></li>
   </ul>
 </details>
 
-<details>
-  <summary>Server</summary>
-  <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
-  </ul>
-</details>
 
-<details>
-<summary>Database</summary>
-  <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
-  </ul>
-</details>
 
 <!-- Features -->
 
@@ -96,9 +84,9 @@ After you're finished please remove all the comments and instructions!
 
 > Describe between 1-3 key features of the application.
 
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
+- **[Adding Comments]**
+- **[Adding Posts]**
+- **[Liking a Post]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -106,7 +94,7 @@ After you're finished please remove all the comments and instructions!
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Add a link to your deployed project.
+> Comming Soom!!!
 
 - [Live Demo Link](https://yourdeployedapplicationlink.com)
 
@@ -116,83 +104,51 @@ After you're finished please remove all the comments and instructions!
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-> Describe how a new developer could make use of your project.
+> In order to run this project you need to run the following commands in your terminal:Ensure you cd into the directory in which you had clone the project into.
 
 To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
 In order to run this project you need:
-
-<!--
-Example command:
-
 ```sh
  gem install rails
 ```
- -->
-
 ### Setup
 
 Clone this repository to your desired folder:
-
-<!--
-Example commands:
-
 ```sh
   cd my-folder
-  git clone git@github.com:myaccount/my-project.git
+  git clone https://github.com/Ukaypromise/blog-app.git
 ```
---->
-
 ### Install
 
 Install this project with:
 
-<!--
 Example command:
 
 ```sh
   cd my-project
   gem install
 ```
---->
-
 ### Usage
 
 To run the project, execute the following command:
-
-<!--
-Example command:
-
 ```sh
   rails server
 ```
---->
-
 ### Run tests
 
 To run tests, run the following command:
-
-<!--
-Example command:
-
 ```sh
   bin/rails test test/models/article_test.rb
 ```
---->
-
 ### Deployment
 
 You can deploy this project using:
+- [Heroku](https://www.heroku.com/)
+- [Netlify](https://www.netlify.com/)
 
-<!--
-Example:
-
-```sh
-
-```
- -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -200,19 +156,10 @@ Example:
 
 ## 👥 Authors <a name="authors"></a>
 
-> Mention all of the collaborators of this project.
 
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@Ukaypromise](https://github.com/Ukaypromise)
+- Twitter: [@PromiseUkay](https://twitter.com/PromiseUkay)
+- LinkedIn: [@promiseuka](https://www.linkedin.com/in/promiseuka/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -222,9 +169,9 @@ Example:
 
 > Describe 1 - 3 features you will add to the project.
 
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
+- [ ] **[Add Admin Section]**
+- [ ] **[Edit Post]**
+- [ ] **[Delete Post]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -244,7 +191,7 @@ Feel free to check the [issues page](../../issues/).
 
 > Write a message to encourage readers to support your project
 
-If you like this project...
+If you like this project please give it a ⭐️!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -254,7 +201,7 @@ If you like this project...
 
 > Give credit to everyone who inspired your codebase.
 
-I would like to thank...
+I would like to thank @microverse for giving me the opportunity to work on this project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -264,13 +211,10 @@ I would like to thank...
 
 > Add at least 2 questions new developers would ask when they decide to use your project.
 
-- **[Question_1]**
+- **[How to get Started with Ruby on Rails]**
 
-  - [Answer_1]
+  - [Ruby on Rails](https://guides.rubyonrails.org/getting_started.html)
 
-- **[Question_2]**
-
-  - [Answer_2]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
