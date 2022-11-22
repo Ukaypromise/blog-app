@@ -110,16 +110,15 @@ To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-In order to run this project you need to run the following commands in your terminal:
-Ensure you cd into the directory in which you had clone the project into.
+In order to run this project you need:
+
+<!--
+Example command:
 
 ```sh
-
-
+ gem install rails
 ```
- rails server
-```
-
+ -->
 
 ### Setup
 
@@ -128,9 +127,9 @@ Clone this repository to your desired folder:
 <!--
 Example commands:
 
-```
+```sh
   cd my-folder
-  git clone https://github.com/Ukaypromise/blog-app.git
+  git clone git@github.com:myaccount/my-project.git
 ```
 --->
 
@@ -138,42 +137,50 @@ Example commands:
 
 Install this project with:
 
-```
-  cd blog-app
-  gem bundle install
-```
+<!--
+Example command:
 
+```sh
+  cd my-project
+  gem install
+```
+--->
 
 ### Usage
 
 To run the project, execute the following command:
 
-```
+<!--
+Example command:
+
+```sh
   rails server
 ```
-
+--->
 
 ### Run tests
 
 To run tests, run the following command:
-  
-  ```
-    rspec
-  ```
-  or
 
-```
+<!--
+Example command:
+
+```sh
   bin/rails test test/models/article_test.rb
 ```
-
+--->
 
 ### Deployment
 
 You can deploy this project using:
 
-- [Heroku](https://www.heroku.com/)
-- [Netlify](https://www.netlify.com/)
- 
+<!--
+Example:
+
+```sh
+
+```
+ -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -181,12 +188,19 @@ You can deploy this project using:
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 ** Promise Uka **
+> Mention all of the collaborators of this project.
 
-- GitHub: [@Ukaypromise](https://github.com/Ukaypromise)
-- Twitter: [@PromiseUkay](https://twitter.com/PromiseUkay)
-- LinkedIn: [@promiseuka](https://www.linkedin.com/in/promiseuka/)
+👤 **Author1**
 
+- GitHub: [@githubhandle](https://github.com/githubhandle)
+- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+
+👤 **Author2**
+
+- GitHub: [@githubhandle](https://github.com/githubhandle)
+- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -194,11 +208,11 @@ You can deploy this project using:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> The app will also have an admin section where the site owner can create, edit, and delete posts and comments
+> Describe 1 - 3 features you will add to the project.
 
-- [ ] **[Admin Section]**
-- [ ] **[Edit posts]**
-- [ ] **[Delete Posts]**
+- [ ] **[new_feature_1]**
+- [ ] **[new_feature_2]**
+- [ ] **[new_feature_3]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -228,7 +242,7 @@ If you like this project...
 
 > Give credit to everyone who inspired your codebase.
 
-I would like to thank @microverse for giving me the opportunity to work on this project.
+I would like to thank...
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -238,10 +252,13 @@ I would like to thank @microverse for giving me the opportunity to work on this 
 
 > Add at least 2 questions new developers would ask when they decide to use your project.
 
-- **[How do i get started with Ruby on Rails]**
+- **[Question_1]**
 
-  - [Sign Up at Microverse](https://www.microverse.org/)
+  - [Answer_1]
 
+- **[Question_2]**
+
+  - [Answer_2]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
