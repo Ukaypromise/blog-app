@@ -1,4 +1,5 @@
-class Post < ActiveRecord
-  belongs_to :user
+class Post < ApplicationRecord
   has_many :comments
+  has_many :likes
+  belongs_to :users
 end
