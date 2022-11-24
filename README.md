@@ -58,16 +58,27 @@ After you're finished please remove all the comments and instructions!
 <!-- PROJECT DESCRIPTION -->
 
 # 📖 [Blog App ] <a name="blog-app"></a>
-
-> The Blog app will be a classic example of a blog website. 
-
+![blog-gif](https://ansarshome.files.wordpress.com/2021/09/d3464a4351fdf340ccb6bb37c281381a.gif)
 **[Blog App]** is a blog site app is a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts. The app will also have an admin section where the site owner can create, edit, and delete posts and comments(a future feature to be added).
-
 ## 🛠 Built With <a name="built-with"></a>
-
 ### Tech Stack <a name="tech-stack"></a>
 
 > The tech stack for building this project was Ruby on Rails
+
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li>HTML, CSS</li>
+    <li>JavaScript</li>
+  </ul>
+</details>
+
+<details>
+<summary>Database</summary>
+  <ul>
+    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+  </ul>
+</details>
 
 <details>
   <summary>Framework</summary>
@@ -76,17 +87,15 @@ After you're finished please remove all the comments and instructions!
   </ul>
 </details>
 
-
-
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
 > Describe between 1-3 key features of the application.
 
-- **[Adding Comments]**
-- **[Adding Posts]**
-- **[Liking a Post]**
+- **Adding Comments**
+- **Adding Posts**
+- **Liking a Post**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -169,9 +178,9 @@ You can deploy this project using:
 
 > Describe 1 - 3 features you will add to the project.
 
-- [ ] **[Add Admin Section]**
-- [ ] **[Edit Post]**
-- [ ] **[Delete Post]**
+- [ ] **Add Admin Section**
+- [ ] **Edit Post**
+- [ ] **Delete Post**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -211,7 +220,7 @@ I would like to thank @microverse for giving me the opportunity to work on this 
 
 > Add at least 2 questions new developers would ask when they decide to use your project.
 
-- **[How to get Started with Ruby on Rails]**
+- **How to get Started with Ruby on Rails**
 
   - [Ruby on Rails](https://guides.rubyonrails.org/getting_started.html)
 
@@ -222,7 +231,7 @@ I would like to thank @microverse for giving me the opportunity to work on this 
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](https://choosealicense.com/licenses/mit/) licensed.
 
 _NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
 
