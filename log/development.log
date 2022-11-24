@@ -384,3 +384,6 @@ FOREIGN KEY ("author_id")
   [1m[36mTRANSACTION (2.7ms)[0m  [1m[31mROLLBACK[0m
   [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
   [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (142.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "posts_counter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "John Doe"], ["photo", nil], ["bio", nil], ["posts_counter", nil], ["created_at", "2022-11-24 14:48:22.985437"], ["updated_at", "2022-11-24 14:48:22.985437"]]
+  [1m[36mTRANSACTION (12.1ms)[0m  [1m[35mCOMMIT[0m
