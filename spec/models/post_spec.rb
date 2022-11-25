@@ -26,7 +26,7 @@ RSpec.describe Post, type: :model do
 
     it 'is not valid without a user' do
       @post.author = nil
-      expect(post).to_not be_valid
+      expect(@post).to_not be_valid
     end
 
     it 'Check the lenghth of post title to be less than 250' do

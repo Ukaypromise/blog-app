@@ -5,24 +5,22 @@ RSpec.describe Comment, type: :model do
     @user = User.new(name: 'John', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.')
     @post = Post.new(title: 'My first post', text: 'This is my first post.', author: @user, comments_counter: 4,
                      likes_counter: 6)
-    let(:comment) do
-      Comment.new(users: @user, posts: @post, text: 'Hey!, it is my first comment')
-    end
+    @comment = Comment.new(users: @user, posts: @post, text: 'Hey!, it is my first comment')
   end
 
   it 'is not valid without a text' do
-    comment.text = 'Hey!, it is my first comment'
-    expect(comment).to be_valid
+    @comment.text = 'Hey!, it is my first comment'
+    expect(@comment).to be_valid
   end
 
   it 'is only valid with a user' do
-    comment.users = @user
-    expect(comment).to be_valid
+    @comment.users = @user
+    expect(@comment).to be_valid
   end
 
   it 'is valid with a post' do
-    comment.posts = @post
-    expect(comment).to be_valid
+    @comment.posts = @post
+    expect(@comment).to be_valid
   end
 
   it 'should increment and update comment_counter by 1' do
