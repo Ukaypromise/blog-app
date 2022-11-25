@@ -35,4 +35,8 @@ RSpec.describe User, type: :model do
     subject.posts_counter = nil
     expect(subject).to_not be_valid
   end
+
+  it 'Recent post method should return zero' do
+    expect(subject.three_most_recent_post.length).to be 0
+  end
 end
