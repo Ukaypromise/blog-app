@@ -8,8 +8,6 @@ RSpec.describe Post, type: :model do
   end
 
   context 'Test implementation to post model' do
-    
-
     it 'Check the lenghth of post title to be less than 250' do
       expect(@post.title).to(satisfy { |x| x.length <= 250 })
     end
