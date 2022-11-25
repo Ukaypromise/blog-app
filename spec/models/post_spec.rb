@@ -2,32 +2,13 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   before(:all) do
-    @user = User.new(name: 'Promise', photo: 'https://unsplash.com/photos/M_-5YgbSdV3o',
-                     bio: 'I am a frontend developer.')
+    @user = User.new(name: 'John', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.')
     @post = Post.new(title: 'My first post', text: 'This is my first post.', author: @user, comments_counter: 4,
                      likes_counter: 6)
   end
 
-  context 'Implementating Test for post model' do
-    it 'is not valid without a title' do
-      @post.title = nil
-      expect(@post).to_not be_valid
-    end
-
-    it 'is not valid without a text' do
-      @post.text = 'This is my first post.'
-      expect(@post).to be_valid
-    end
-
-    it 'is only valid with a user' do
-      @post.author = @user
-      expect(@post).to be_valid
-    end
-
-    it 'is not valid without a user' do
-      @post.author = nil
-      expect(@post).to_not be_valid
-    end
+  context 'Test implementation to post model' do
+    
 
     it 'Check the lenghth of post title to be less than 250' do
       expect(@post.title).to(satisfy { |x| x.length <= 250 })
