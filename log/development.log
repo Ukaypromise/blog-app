@@ -1820,3 +1820,461 @@ Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.0ms | Allocations: 278
 
 
   [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mComment Create (87.7ms)[0m  [1m[32mINSERT INTO "comments" ("text", "author_id", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "Hi Tom!"], ["author_id", nil], ["post_id", nil], ["created_at", "2022-11-28 20:58:42.273228"], ["updated_at", "2022-11-28 20:58:42.273228"]]
+  [1m[36mPost Update All (1.2ms)[0m  [1m[33mUPDATE "posts" SET "comments_counter" = COALESCE("comments_counter", 0) + $1 WHERE "posts"."id" IS NULL[0m  [["comments_counter", 1]]
+  [1m[36mTRANSACTION (30.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mComment Create (0.8ms)[0m  [1m[32mINSERT INTO "comments" ("text", "author_id", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "Hi Promise!"], ["author_id", nil], ["post_id", nil], ["created_at", "2022-11-28 21:00:23.016877"], ["updated_at", "2022-11-28 21:00:23.016877"]]
+  [1m[36mPost Update All (0.8ms)[0m  [1m[33mUPDATE "posts" SET "comments_counter" = COALESCE("comments_counter", 0) + $1 WHERE "posts"."id" IS NULL[0m  [["comments_counter", 1]]
+  [1m[36mTRANSACTION (58.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1508658759281986305)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateLikes (20221122203452)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (28.9ms)[0m  [1m[35mDROP TABLE "likes"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (1.7ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20221122203452"]]
+  [1m[36mTRANSACTION (32.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateComments (20221122203251)
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.3ms)[0m  [1m[35mDROP TABLE "comments"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (2.8ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20221122203251"]]
+  [1m[36mTRANSACTION (18.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePosts (20221122202720)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.9ms)[0m  [1m[35mDROP TABLE "posts"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.8ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20221122202720"]]
+  [1m[36mTRANSACTION (30.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsers (20221122183849)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.8ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (1.5ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20221122183849"]]
+  [1m[36mTRANSACTION (31.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(1508658759281986305)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1508658759281986305)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20221122183849)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (230.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "photo" character varying, "bio" character varying, "posts_counter" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221122183849"]]
+  [1m[36mTRANSACTION (22.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePosts (20221122202720)
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (261.8ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "title" character varying, "text" text, "comments_counter" integer, "likes_counter" integer, "author_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_04d13ef8c7"
+FOREIGN KEY ("author_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (43.0ms)[0m  [1m[35mCREATE INDEX "index_posts_on_author_id" ON "posts" ("author_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221122202720"]]
+  [1m[36mTRANSACTION (19.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateComments (20221122203251)
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (79.5ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "text" text, "author_id" bigint, "post_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_f44b1e3c8a"
+FOREIGN KEY ("author_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_2fd19c0db7"
+FOREIGN KEY ("post_id")
+  REFERENCES "posts" ("id")
+)[0m
+  [1m[35m (28.6ms)[0m  [1m[35mCREATE INDEX "index_comments_on_author_id" ON "comments" ("author_id")[0m
+  [1m[35m (55.7ms)[0m  [1m[35mCREATE INDEX "index_comments_on_post_id" ON "comments" ("post_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (2.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221122203251"]]
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateLikes (20221122203452)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (43.1ms)[0m  [1m[35mCREATE TABLE "likes" ("id" bigserial primary key, "post_id" bigint, "author_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_87a8aac469"
+FOREIGN KEY ("post_id")
+  REFERENCES "posts" ("id")
+, CONSTRAINT "fk_rails_1f2302367a"
+FOREIGN KEY ("author_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (36.2ms)[0m  [1m[35mCREATE INDEX "index_likes_on_post_id" ON "likes" ("post_id")[0m
+  [1m[35m (38.6ms)[0m  [1m[35mCREATE INDEX "index_likes_on_author_id" ON "likes" ("author_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221122203452"]]
+  [1m[36mTRANSACTION (22.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(1508658759281986305)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mComment Load (43.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (13.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (64.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "posts_counter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Tom"], ["photo", "https://unsplash.com/photos/F_-0BxGuVvo"], ["bio", "Teacher from Mexico."], ["posts_counter", nil], ["created_at", "2022-11-29 10:44:08.222808"], ["updated_at", "2022-11-29 10:44:08.222808"]]
+  [1m[36mTRANSACTION (33.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "posts_counter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Lilly"], ["photo", "https://unsplash.com/photos/F_-0BxGuVvo"], ["bio", "Teacher from Poland."], ["posts_counter", nil], ["created_at", "2022-11-29 10:45:54.203089"], ["updated_at", "2022-11-29 10:45:54.203089"]]
+  [1m[36mTRANSACTION (22.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mPost Load (12.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "posts_counter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Tom"], ["photo", "https://unsplash.com/photos/F_-0BxGuVvo"], ["bio", "Teacher from Mexico."], ["posts_counter", nil], ["created_at", "2022-11-29 11:07:02.934829"], ["updated_at", "2022-11-29 11:07:02.934829"]]
+  [1m[36mTRANSACTION (16.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Create (43.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "text", "comments_counter", "likes_counter", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Hello"], ["text", "This is my first post"], ["comments_counter", nil], ["likes_counter", nil], ["author_id", 4], ["created_at", "2022-11-29 11:07:20.313474"], ["updated_at", "2022-11-29 11:07:20.313474"]]
+  [1m[36mUser Update All (46.7ms)[0m  [1m[33mUPDATE "users" SET "posts_counter" = COALESCE("posts_counter", 0) + $1 WHERE "users"."id" = $2[0m  [["posts_counter", 1], ["id", 4]]
+  [1m[36mTRANSACTION (25.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "posts_counter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Lilly"], ["photo", "https://unsplash.com/photos/F_-0BxGuVvo"], ["bio", "Teacher from Poland."], ["posts_counter", nil], ["created_at", "2022-11-29 11:08:02.596810"], ["updated_at", "2022-11-29 11:08:02.596810"]]
+  [1m[36mTRANSACTION (14.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mComment Create (65.4ms)[0m  [1m[32mINSERT INTO "comments" ("text", "author_id", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "Hi Tom!"], ["author_id", 5], ["post_id", 1], ["created_at", "2022-11-29 11:08:17.780063"], ["updated_at", "2022-11-29 11:08:17.780063"]]
+  [1m[36mPost Update All (0.8ms)[0m  [1m[33mUPDATE "posts" SET "comments_counter" = COALESCE("comments_counter", 0) + $1 WHERE "posts"."id" = $2[0m  [["comments_counter", 1], ["id", 1]]
+  [1m[36mTRANSACTION (20.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "posts_counter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Promise"], ["photo", "https://unsplash.com/photos/F_-0BxGuVvo"], ["bio", "A Footballer at Chelsea."], ["posts_counter", nil], ["created_at", "2022-11-29 11:16:32.261241"], ["updated_at", "2022-11-29 11:16:32.261241"]]
+  [1m[36mTRANSACTION (20.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "posts_counter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Omachi"], ["photo", "https://unsplash.com/photos/F_-0BxGuVvo"], ["bio", "Fullstack developer at Microverse."], ["posts_counter", nil], ["created_at", "2022-11-29 11:16:45.797232"], ["updated_at", "2022-11-29 11:16:45.797232"]]
+  [1m[36mTRANSACTION (15.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "posts_counter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Erik"], ["photo", "https://unsplash.com/photos/F_-0BxGuVvo"], ["bio", "A Ruby developer at Google."], ["posts_counter", nil], ["created_at", "2022-11-29 11:17:01.391377"], ["updated_at", "2022-11-29 11:17:01.391377"]]
+  [1m[36mTRANSACTION (14.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Create (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "text", "comments_counter", "likes_counter", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Hello"], ["text", "This is my first post"], ["comments_counter", nil], ["likes_counter", nil], ["author_id", 6], ["created_at", "2022-11-29 11:18:07.692388"], ["updated_at", "2022-11-29 11:18:07.692388"]]
+  [1m[36mUser Update All (0.8ms)[0m  [1m[33mUPDATE "users" SET "posts_counter" = COALESCE("posts_counter", 0) + $1 WHERE "users"."id" = $2[0m  [["posts_counter", 1], ["id", 6]]
+  [1m[36mTRANSACTION (39.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "text", "comments_counter", "likes_counter", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Hello"], ["text", "This is my first post"], ["comments_counter", nil], ["likes_counter", nil], ["author_id", 7], ["created_at", "2022-11-29 11:18:17.464698"], ["updated_at", "2022-11-29 11:18:17.464698"]]
+  [1m[36mUser Update All (0.7ms)[0m  [1m[33mUPDATE "users" SET "posts_counter" = COALESCE("posts_counter", 0) + $1 WHERE "users"."id" = $2[0m  [["posts_counter", 1], ["id", 7]]
+  [1m[36mTRANSACTION (15.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Create (1.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "text", "comments_counter", "likes_counter", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Hello"], ["text", "This is my first post"], ["comments_counter", nil], ["likes_counter", nil], ["author_id", 8], ["created_at", "2022-11-29 11:18:27.111799"], ["updated_at", "2022-11-29 11:18:27.111799"]]
+  [1m[36mUser Update All (0.8ms)[0m  [1m[33mUPDATE "users" SET "posts_counter" = COALESCE("posts_counter", 0) + $1 WHERE "users"."id" = $2[0m  [["posts_counter", 1], ["id", 8]]
+  [1m[36mTRANSACTION (20.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mComment Create (1.2ms)[0m  [1m[32mINSERT INTO "comments" ("text", "author_id", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "Hi Tom!"], ["author_id", 4], ["post_id", 4], ["created_at", "2022-11-29 11:19:58.387663"], ["updated_at", "2022-11-29 11:19:58.387663"]]
+  [1m[36mPost Update All (1.1ms)[0m  [1m[33mUPDATE "posts" SET "comments_counter" = COALESCE("comments_counter", 0) + $1 WHERE "posts"."id" = $2[0m  [["comments_counter", 1], ["id", 4]]
+  [1m[36mTRANSACTION (15.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mComment Create (1.1ms)[0m  [1m[32mINSERT INTO "comments" ("text", "author_id", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "Hi Tom!"], ["author_id", 6], ["post_id", 4], ["created_at", "2022-11-29 11:20:08.098378"], ["updated_at", "2022-11-29 11:20:08.098378"]]
+  [1m[36mPost Update All (0.8ms)[0m  [1m[33mUPDATE "posts" SET "comments_counter" = COALESCE("comments_counter", 0) + $1 WHERE "posts"."id" = $2[0m  [["comments_counter", 1], ["id", 4]]
+  [1m[36mTRANSACTION (13.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mComment Create (1.0ms)[0m  [1m[32mINSERT INTO "comments" ("text", "author_id", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "Hi Tom!"], ["author_id", 7], ["post_id", 4], ["created_at", "2022-11-29 11:20:15.113498"], ["updated_at", "2022-11-29 11:20:15.113498"]]
+  [1m[36mPost Update All (0.7ms)[0m  [1m[33mUPDATE "posts" SET "comments_counter" = COALESCE("comments_counter", 0) + $1 WHERE "posts"."id" = $2[0m  [["comments_counter", 1], ["id", 4]]
+  [1m[36mTRANSACTION (19.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mComment Create (1.1ms)[0m  [1m[32mINSERT INTO "comments" ("text", "author_id", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "Hi Tom!"], ["author_id", 8], ["post_id", 4], ["created_at", "2022-11-29 11:20:24.918135"], ["updated_at", "2022-11-29 11:20:24.918135"]]
+  [1m[36mPost Update All (0.8ms)[0m  [1m[33mUPDATE "posts" SET "comments_counter" = COALESCE("comments_counter", 0) + $1 WHERE "posts"."id" = $2[0m  [["comments_counter", 1], ["id", 4]]
+  [1m[36mTRANSACTION (16.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/users" for 127.0.0.1 at 2022-11-29 06:23:53 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (36.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 17.9ms | Allocations: 332)
+  Rendered layout layouts/application.html.erb (Duration: 697.5ms | Allocations: 35390)
+Completed 200 OK in 746ms (Views: 717.0ms | ActiveRecord: 0.0ms | Allocations: 41389)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-11-29 06:23:56 -0500
+Processing by UsersController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 2676)
+Completed 200 OK in 21ms (Views: 19.9ms | ActiveRecord: 0.0ms | Allocations: 3108)
+
+
+Started GET "/users/:user_id/posts" for 127.0.0.1 at 2022-11-29 06:26:03 -0500
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>":user_id"}
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 0.0ms | Allocations: 4529)
+
+
+  
+NameError (undefined local variable or method `first_post' for main:Object
+
+Comment.create(post: first_post, author: first_user, text: 'Hi Tom!' )
+                     ^^^^^^^^^^):
+  
+app/models/post.rb:21:in `<main>'
+app/controllers/posts_controller.rb:3:in `index'
+Started GET "/users/:user_id/posts" for 127.0.0.1 at 2022-11-29 06:26:05 -0500
+Processing by PostsController#index as */*
+  Parameters: {"user_id"=>":user_id"}
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms | Allocations: 2793)
+
+
+  
+NameError (undefined local variable or method `first_post' for main:Object
+
+Comment.create(post: first_post, author: first_user, text: 'Hi Tom!' )
+                     ^^^^^^^^^^):
+  
+app/models/post.rb:21:in `<main>'
+app/controllers/posts_controller.rb:3:in `index'
+Started GET "/users/:user_id/posts" for 127.0.0.1 at 2022-11-29 06:26:24 -0500
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>":user_id"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 11.9ms | Allocations: 119)
+  Rendered layout layouts/application.html.erb (Duration: 67.1ms | Allocations: 14270)
+Completed 200 OK in 96ms (Views: 73.4ms | ActiveRecord: 0.0ms | Allocations: 16954)
+
+
+Started GET "/users/:user_id/posts" for 127.0.0.1 at 2022-11-29 06:26:25 -0500
+Processing by PostsController#index as */*
+  Parameters: {"user_id"=>":user_id"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 2481)
+Completed 200 OK in 26ms (Views: 24.1ms | ActiveRecord: 0.0ms | Allocations: 2788)
+
+
+Started GET "/users/" for 127.0.0.1 at 2022-11-29 06:28:09 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (123.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  Rendered users/index.html.erb within layouts/application (Duration: 192.8ms | Allocations: 6315)
+  Rendered layout layouts/application.html.erb (Duration: 211.8ms | Allocations: 9288)
+Completed 200 OK in 233ms (Views: 87.1ms | ActiveRecord: 133.1ms | Allocations: 11819)
+
+
+Started GET "/users/" for 127.0.0.1 at 2022-11-29 06:28:12 -0500
+Processing by UsersController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  Rendered users/index.html.erb within layouts/application (Duration: 16.8ms | Allocations: 969)
+  Rendered layout layouts/application.html.erb (Duration: 41.5ms | Allocations: 3445)
+Completed 200 OK in 44ms (Views: 42.7ms | ActiveRecord: 0.6ms | Allocations: 3841)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2022-11-29 06:31:49 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 20.4ms | Allocations: 98)
+  Rendered layout layouts/application.html.erb (Duration: 41.4ms | Allocations: 2582)
+Completed 200 OK in 44ms (Views: 42.7ms | ActiveRecord: 0.0ms | Allocations: 2930)
+
+
+Started GET "/users/" for 127.0.0.1 at 2022-11-29 06:32:34 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  Rendered users/index.html.erb within layouts/application (Duration: 21.6ms | Allocations: 1254)
+  Rendered layout layouts/application.html.erb (Duration: 57.1ms | Allocations: 4158)
+Completed 200 OK in 88ms (Views: 84.6ms | ActiveRecord: 0.6ms | Allocations: 4981)
+
+
+Started GET "/users/" for 127.0.0.1 at 2022-11-29 06:32:35 -0500
+Processing by UsersController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  Rendered users/index.html.erb within layouts/application (Duration: 14.5ms | Allocations: 908)
+  Rendered layout layouts/application.html.erb (Duration: 43.8ms | Allocations: 3389)
+Completed 200 OK in 51ms (Views: 49.1ms | ActiveRecord: 0.7ms | Allocations: 3766)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2022-11-29 06:32:39 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 22.9ms | Allocations: 2080)
+  Rendered layout layouts/application.html.erb (Duration: 23.9ms | Allocations: 2159)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.0ms | Allocations: 2468)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass
+
+  <h3>Username: '.freeze;@output_buffer.append=( @user.name );@output_buffer.safe_append='</h3>
+                                                      ^^^^^):
+    1: <h1>Here is a list of posts for a given user</h1><section>
+    2:   <h3>Username: <%= @user.name %></h3>
+    3:   <h4>Bio: <%= @user.bio %></h4>
+    4:   <p>TotalPost: <%= @user.posts_counter %></p>
+    5:   <p>Created: <%= @user.created_at %></p>
+  
+app/views/users/show.html.erb:2
+Started GET "/users/2" for 127.0.0.1 at 2022-11-29 06:33:39 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 12.9ms | Allocations: 2057)
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 2145)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms | Allocations: 2938)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass
+
+#   <h3>Username: '.freeze;@output_buffer.append=( @user.name );@output_buffer.safe_append='</h3>
+                                                        ^^^^^):
+    1: <h1>Here is a list of posts for a given user</h1><section>
+    2: #   <h3>Username: <%= @user.name %></h3>
+    3:   <h4>Bio: <%= @user.bio %></h4>
+    4:   <p>TotalPost: <%= @user.posts_counter %></p>
+    5:   <p>Created: <%= @user.created_at %></p>
+  
+app/views/users/show.html.erb:2
+Started GET "/users/2" for 127.0.0.1 at 2022-11-29 06:33:41 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 9.2ms | Allocations: 1726)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 1805)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms | Allocations: 2072)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass
+
+#   <h3>Username: '.freeze;@output_buffer.append=( @user.name );@output_buffer.safe_append='</h3>
+                                                        ^^^^^):
+    1: <h1>Here is a list of posts for a given user</h1><section>
+    2: #   <h3>Username: <%= @user.name %></h3>
+    3:   <h4>Bio: <%= @user.bio %></h4>
+    4:   <p>TotalPost: <%= @user.posts_counter %></p>
+    5:   <p>Created: <%= @user.created_at %></p>
+  
+app/views/users/show.html.erb:2
+Started GET "/users/2" for 127.0.0.1 at 2022-11-29 06:33:55 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1725)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 1804)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 2043)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass
+
+#   <h3>Username: '.freeze;@output_buffer.append=( @user.name );@output_buffer.safe_append='</h3>
+                                                        ^^^^^):
+    1: <h1>Here is a list of posts for a given user</h1><section>
+    2: #   <h3>Username: <%= @user.name %></h3>
+    3:   <h4>Bio: <%= @user.bio %></h4>
+    4:   <p>TotalPost: <%= @user.posts_counter %></p>
+    5:   <p>Created: <%= @user.created_at %></p>
+  
+app/views/users/show.html.erb:2
+Started GET "/users/2" for 127.0.0.1 at 2022-11-29 06:33:56 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1725)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 1804)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 2049)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass
+
+#   <h3>Username: '.freeze;@output_buffer.append=( @user.name );@output_buffer.safe_append='</h3>
+                                                        ^^^^^):
+    1: <h1>Here is a list of posts for a given user</h1><section>
+    2: #   <h3>Username: <%= @user.name %></h3>
+    3:   <h4>Bio: <%= @user.bio %></h4>
+    4:   <p>TotalPost: <%= @user.posts_counter %></p>
+    5:   <p>Created: <%= @user.created_at %></p>
+  
+app/views/users/show.html.erb:2
+Started GET "/users/:user_id/posts" for 127.0.0.1 at 2022-11-29 06:34:09 -0500
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>":user_id"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 18.6ms | Allocations: 120)
+  Rendered layout layouts/application.html.erb (Duration: 33.0ms | Allocations: 3081)
+Completed 200 OK in 42ms (Views: 40.2ms | ActiveRecord: 0.0ms | Allocations: 3721)
+
+
+Started GET "/users/:user_id/posts" for 127.0.0.1 at 2022-11-29 06:34:12 -0500
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>":user_id"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 2471)
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.0ms | Allocations: 2762)
+
+
+Started GET "/users/:user_id/posts" for 127.0.0.1 at 2022-11-29 06:34:12 -0500
+Processing by PostsController#index as */*
+  Parameters: {"user_id"=>":user_id"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 20.3ms | Allocations: 2480)
+Completed 200 OK in 25ms (Views: 23.7ms | ActiveRecord: 0.0ms | Allocations: 2760)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-11-29 06:34:16 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  Rendered users/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 1178)
+  Rendered layout layouts/application.html.erb (Duration: 25.8ms | Allocations: 3722)
+Completed 200 OK in 30ms (Views: 26.9ms | ActiveRecord: 0.7ms | Allocations: 4061)
+
+
+Started GET "/users" for 127.0.0.1 at 2022-11-29 06:34:16 -0500
+Processing by UsersController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  Rendered users/index.html.erb within layouts/application (Duration: 11.1ms | Allocations: 900)
+  Rendered layout layouts/application.html.erb (Duration: 30.3ms | Allocations: 3393)
+Completed 200 OK in 36ms (Views: 34.5ms | ActiveRecord: 0.6ms | Allocations: 3669)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2022-11-29 06:34:19 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1747)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 1826)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 2071)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass
+
+#   <h3>Username: '.freeze;@output_buffer.append=( @user.name );@output_buffer.safe_append='</h3>
+                                                        ^^^^^):
+    1: <h1>Here is a list of posts for a given user</h1><section>
+    2: #   <h3>Username: <%= @user.name %></h3>
+    3:   <h4>Bio: <%= @user.bio %></h4>
+    4:   <p>TotalPost: <%= @user.posts_counter %></p>
+    5:   <p>Created: <%= @user.created_at %></p>
+  
+app/views/users/show.html.erb:2
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
