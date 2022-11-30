@@ -1154,3 +1154,167 @@ Processing by UsersController#show as HTML
   Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 1482)
 Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 1771)
   [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (39.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (47.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (18.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Update All (126.2ms)[0m  [1m[33mUPDATE "posts" SET "comments_counter" = COALESCE("comments_counter", 0) + $1 WHERE "posts"."id" IS NULL[0m  [["comments_counter", 5]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Update All (1.0ms)[0m  [1m[33mUPDATE "posts" SET "likes_counter" = COALESCE("likes_counter", 0) + $1 WHERE "posts"."id" IS NULL[0m  [["likes_counter", 7]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (12.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (202.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "posts_counter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "John"], ["photo", "https://unsplash.com/photos/F_-0BxGuVvo"], ["bio", "I am a frontend developer"], ["posts_counter", 4], ["created_at", "2022-11-30 14:50:11.494408"], ["updated_at", "2022-11-30 14:50:11.494408"]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (756.1ms)[0m  [1m[32mINSERT INTO "posts" ("title", "text", "comments_counter", "likes_counter", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "My first post"], ["text", "This is my first post"], ["comments_counter", 1], ["likes_counter", 3], ["author_id", 1], ["created_at", "2022-11-30 14:50:11.883480"], ["updated_at", "2022-11-30 14:50:11.883480"]]
+  [1m[36mUser Update All (27.6ms)[0m  [1m[33mUPDATE "users" SET "posts_counter" = COALESCE("posts_counter", 0) + $1 WHERE "users"."id" = $2[0m  [["posts_counter", 1], ["id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/1/posts" for 127.0.0.1 at 2022-11-30 15:50:12 +0100
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 46.8ms | Allocations: 359)
+  Rendered layout layouts/application.html.erb (Duration: 3069.8ms | Allocations: 101387)
+Completed 200 OK in 3219ms (Views: 3113.6ms | ActiveRecord: 0.0ms | Allocations: 104969)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "posts_counter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "John"], ["photo", "https://unsplash.com/photos/F_-0BxGuVvo"], ["bio", "I am a frontend developer"], ["posts_counter", 4], ["created_at", "2022-11-30 14:50:16.801835"], ["updated_at", "2022-11-30 14:50:16.801835"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "text", "comments_counter", "likes_counter", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "My first post"], ["text", "This is my first post"], ["comments_counter", 1], ["likes_counter", 3], ["author_id", 2], ["created_at", "2022-11-30 14:50:16.808254"], ["updated_at", "2022-11-30 14:50:16.808254"]]
+  [1m[36mUser Update All (0.6ms)[0m  [1m[33mUPDATE "users" SET "posts_counter" = COALESCE("posts_counter", 0) + $1 WHERE "users"."id" = $2[0m  [["posts_counter", 1], ["id", 2]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/2/posts" for 127.0.0.1 at 2022-11-30 15:50:16 +0100
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 1647)
+Completed 200 OK in 20ms (Views: 8.4ms | ActiveRecord: 0.0ms | Allocations: 1960)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "posts_counter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "John"], ["photo", "https://unsplash.com/photos/F_-0BxGuVvo"], ["bio", "I am a frontend developer"], ["posts_counter", 4], ["created_at", "2022-11-30 14:50:16.851573"], ["updated_at", "2022-11-30 14:50:16.851573"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "text", "comments_counter", "likes_counter", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "My first post"], ["text", "This is my first post"], ["comments_counter", 1], ["likes_counter", 3], ["author_id", 3], ["created_at", "2022-11-30 14:50:16.859809"], ["updated_at", "2022-11-30 14:50:16.859809"]]
+  [1m[36mUser Update All (5.6ms)[0m  [1m[33mUPDATE "users" SET "posts_counter" = COALESCE("posts_counter", 0) + $1 WHERE "users"."id" = $2[0m  [["posts_counter", 1], ["id", 3]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/3/posts/3" for 127.0.0.1 at 2022-11-30 15:50:16 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"user_id"=>"3", "id"=>"3"}
+  [1m[36mPost Load (10.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (Duration: 60.1ms | Allocations: 135)
+  Rendered layout layouts/application.html.erb (Duration: 63.8ms | Allocations: 1753)
+Completed 200 OK in 132ms (Views: 65.3ms | ActiveRecord: 10.8ms | Allocations: 2630)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "posts_counter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "John"], ["photo", "https://unsplash.com/photos/F_-0BxGuVvo"], ["bio", "I am a frontend developer"], ["posts_counter", 4], ["created_at", "2022-11-30 14:50:17.020680"], ["updated_at", "2022-11-30 14:50:17.020680"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Create (1.1ms)[0m  [1m[32mINSERT INTO "posts" ("title", "text", "comments_counter", "likes_counter", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "My first post"], ["text", "This is my first post"], ["comments_counter", 1], ["likes_counter", 3], ["author_id", 4], ["created_at", "2022-11-30 14:50:17.027332"], ["updated_at", "2022-11-30 14:50:17.027332"]]
+  [1m[36mUser Update All (0.8ms)[0m  [1m[33mUPDATE "users" SET "posts_counter" = COALESCE("posts_counter", 0) + $1 WHERE "users"."id" = $2[0m  [["posts_counter", 1], ["id", 4]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/4/posts/4" for 127.0.0.1 at 2022-11-30 15:50:17 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"user_id"=>"4", "id"=>"4"}
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 1637)
+Completed 200 OK in 23ms (Views: 5.7ms | ActiveRecord: 0.8ms | Allocations: 2110)
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (3.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "posts_counter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "John"], ["photo", "https://unsplash.com/photos/F_-0BxGuVvo"], ["bio", "I am a frontend developer"], ["posts_counter", 4], ["created_at", "2022-11-30 14:50:17.102534"], ["updated_at", "2022-11-30 14:50:17.102534"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users" for 127.0.0.1 at 2022-11-30 15:50:17 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 131)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 1842)
+Completed 200 OK in 58ms (Views: 34.2ms | ActiveRecord: 0.0ms | Allocations: 2620)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "posts_counter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "John"], ["photo", "https://unsplash.com/photos/F_-0BxGuVvo"], ["bio", "I am a frontend developer"], ["posts_counter", 4], ["created_at", "2022-11-30 14:50:17.203091"], ["updated_at", "2022-11-30 14:50:17.203091"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users" for 127.0.0.1 at 2022-11-30 15:50:17 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 1648)
+Completed 200 OK in 14ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 1961)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "posts_counter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "John"], ["photo", "https://unsplash.com/photos/F_-0BxGuVvo"], ["bio", "I am a frontend developer"], ["posts_counter", 4], ["created_at", "2022-11-30 14:50:17.234603"], ["updated_at", "2022-11-30 14:50:17.234603"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users" for 127.0.0.1 at 2022-11-30 15:50:17 +0100
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 1648)
+Completed 200 OK in 12ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 1961)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "posts_counter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "John"], ["photo", "https://unsplash.com/photos/F_-0BxGuVvo"], ["bio", "I am a frontend developer"], ["posts_counter", 4], ["created_at", "2022-11-30 14:50:17.258987"], ["updated_at", "2022-11-30 14:50:17.258987"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/8" for 127.0.0.1 at 2022-11-30 15:50:17 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 213.6ms | Allocations: 135)
+  Rendered layout layouts/application.html.erb (Duration: 215.9ms | Allocations: 1753)
+Completed 200 OK in 224ms (Views: 217.4ms | ActiveRecord: 0.0ms | Allocations: 2140)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "posts_counter", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "John"], ["photo", "https://unsplash.com/photos/F_-0BxGuVvo"], ["bio", "I am a frontend developer"], ["posts_counter", 4], ["created_at", "2022-11-30 14:50:17.499602"], ["updated_at", "2022-11-30 14:50:17.499602"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/9" for 127.0.0.1 at 2022-11-30 15:50:17 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 1637)
+Completed 200 OK in 12ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 1947)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m

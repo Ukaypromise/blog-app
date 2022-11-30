@@ -7,3 +7,4 @@ class UsersController < ApplicationController
     params[:id]
   end
 end
+
