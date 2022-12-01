@@ -20,9 +20,12 @@ second_post = Post.create(author: third_user, title: 'Microverse', text: 'This i
 first_post = Post.create(author: fourth_user, title: 'Hello everyone!', text: 'I am new on this')
 second_post = Post.create(author: fourth_user, title: 'Microverse', text: 'This is very cool')
 
-Comment.create(post: first_post, author: second_user, text: 'Hi Tom!')
+
 Comment.create(post: first_post, author: first_user, text: 'Hi Lilly, How was your day?')
-Comment.create(post: first_post, author: third_user, text: 'I am very well, thank you')
-Comment.create(post: second_post, author: second_user, text: 'Congrats for your second post')
-Comment.create(post: second_post, author: fourth_user, text: 'Welcome to my new blog!')
-Comment.create(post: second_post, author: third_user, text: 'You are right, it is very cool')
+Comment.create(post: second_post, author: first_user, text: 'Hi Lilly, How was your day?')
+Comment.create(post: first_post, author: second_user, text: 'Hi Tom!')
+Comment.create(post: second_post, author: second_user, text: 'I am very well, thank you')
+Comment.create(post: first_post, author: third_user, text: 'Congrats for your second post')
+Comment.create(post: second_post, author: third_user, text: 'Welcome to my new blog!')
+Comment.create(post: first_post, author: fourth_user, text: 'Congrats for your second post')
+Comment.create(post: second_post, author: fourth_user, text: 'You are right, it is very cool')

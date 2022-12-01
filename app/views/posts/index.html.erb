@@ -22,7 +22,7 @@
         <% if post.five_recent_comments.length == 0 %>
           <p>No comments added!</p>
         <% else %>
-          <% post.recent_comments.each do |comment| %>
+          <% post.five_recent_comments.each do |comment| %>
             <li><%= comment.users.name %>: <%= comment.text %></li>
           <% end %>
         <% end %>
