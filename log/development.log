@@ -5186,3 +5186,470 @@ Processing by UsersController#index as */*
 Completed 200 OK in 26ms (Views: 24.3ms | ActiveRecord: 1.2ms | Allocations: 3592)
 
 
+Started GET "/" for 127.0.0.1 at 2022-12-01 08:36:15 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1181)
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 4164)
+Completed 200 OK in 277ms (Views: 274.0ms | ActiveRecord: 0.5ms | Allocations: 4988)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-01 08:36:15 -0500
+Processing by UsersController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 769)
+  Rendered layout layouts/application.html.erb (Duration: 27.8ms | Allocations: 3301)
+Completed 200 OK in 34ms (Views: 32.1ms | ActiveRecord: 0.6ms | Allocations: 3677)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-12-01 08:36:20 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1023.1ms | Allocations: 8820)
+  Rendered layout layouts/application.html.erb (Duration: 1023.6ms | Allocations: 8912)
+Completed 500 Internal Server Error in 1026ms (ActiveRecord: 0.0ms | Allocations: 9243)
+
+
+  
+ActionView::Template::Error (undefined method `photo' for nil:NilClass
+
+      <img src=\''.freeze;@output_buffer.append=( @user.photo );@output_buffer.safe_append='\' alt=\''.freeze;@output_buffer.append=( @user.name );@output_buffer.safe_append=' thumbnail\' />
+                                                       ^^^^^^):
+    1: <section>
+    2:   <div class='one-user'>
+    3:     <div class='user-photo'>
+    4:       <img src='<%= @user.photo %>' alt='<%= @user.name %> thumbnail' />
+    5:     </div>
+    6:     <div class='user-name'>
+    7:       <h2><%= @user.name %></h2>
+  
+app/views/users/show.html.erb:4
+Started GET "/" for 127.0.0.1 at 2022-12-01 08:36:48 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 872)
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | Allocations: 3584)
+Completed 200 OK in 25ms (Views: 23.4ms | ActiveRecord: 0.6ms | Allocations: 3895)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-01 08:36:49 -0500
+Processing by UsersController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/application (Duration: 8.8ms | Allocations: 769)
+  Rendered layout layouts/application.html.erb (Duration: 28.3ms | Allocations: 3307)
+Completed 200 OK in 31ms (Views: 29.2ms | ActiveRecord: 0.6ms | Allocations: 3583)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2022-12-01 08:36:53 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1761)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 1840)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 2085)
+
+
+  
+ActionView::Template::Error (undefined method `photo' for nil:NilClass
+
+      <img src=\''.freeze;@output_buffer.append=( @user.photo );@output_buffer.safe_append='\' alt=\''.freeze;@output_buffer.append=( @user.name );@output_buffer.safe_append=' thumbnail\' />
+                                                       ^^^^^^):
+    1: <section>
+    2:   <div class='one-user'>
+    3:     <div class='user-photo'>
+    4:       <img src='<%= @user.photo %>' alt='<%= @user.name %> thumbnail' />
+    5:     </div>
+    6:     <div class='user-name'>
+    7:       <h2><%= @user.name %></h2>
+  
+app/views/users/show.html.erb:4
+Started GET "/users/2" for 127.0.0.1 at 2022-12-01 08:37:48 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 6.6ms | Allocations: 2146)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 2234)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms | Allocations: 3027)
+
+
+  
+ActionView::Template::Error (undefined method `photo' for nil:NilClass
+
+      <img src=\''.freeze;@output_buffer.append=( @user.photo );@output_buffer.safe_append='\' alt=\''.freeze;@output_buffer.append=( @user.name );@output_buffer.safe_append=' thumbnail\' />
+                                                       ^^^^^^):
+    1: <section>
+    2:   <div class='one-user'>
+    3:     <div class='user-photo'>
+    4:       <img src='<%= @user.photo %>' alt='<%= @user.name %> thumbnail' />
+    5:     </div>
+    6:     <div class='user-name'>
+    7:       <h2><%= @user.name %></h2>
+  
+app/views/users/show.html.erb:4
+Started GET "/users/2" for 127.0.0.1 at 2022-12-01 08:37:49 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1740)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 1819)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 2086)
+
+
+  
+ActionView::Template::Error (undefined method `photo' for nil:NilClass
+
+      <img src=\''.freeze;@output_buffer.append=( @user.photo );@output_buffer.safe_append='\' alt=\''.freeze;@output_buffer.append=( @user.name );@output_buffer.safe_append=' thumbnail\' />
+                                                       ^^^^^^):
+    1: <section>
+    2:   <div class='one-user'>
+    3:     <div class='user-photo'>
+    4:       <img src='<%= @user.photo %>' alt='<%= @user.name %> thumbnail' />
+    5:     </div>
+    6:     <div class='user-name'>
+    7:       <h2><%= @user.name %></h2>
+  
+app/views/users/show.html.erb:4
+Started GET "/" for 127.0.0.1 at 2022-12-01 08:38:51 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/application (Duration: 8.8ms | Allocations: 1116)
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | Allocations: 4044)
+Completed 200 OK in 25ms (Views: 22.6ms | ActiveRecord: 0.7ms | Allocations: 4378)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-01 08:38:56 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 769)
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | Allocations: 3301)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.6ms | Allocations: 3569)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-01 08:38:56 -0500
+Processing by UsersController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/application (Duration: 7.3ms | Allocations: 769)
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | Allocations: 3301)
+Completed 200 OK in 27ms (Views: 25.6ms | ActiveRecord: 0.6ms | Allocations: 3577)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-12-01 08:39:00 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1739)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 1818)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 2057)
+
+
+  
+ActionView::Template::Error (undefined method `photo' for nil:NilClass
+
+      <img src=\''.freeze;@output_buffer.append=( @user.photo );@output_buffer.safe_append='\' alt=\''.freeze;@output_buffer.append=( @user.name );@output_buffer.safe_append=' thumbnail\' />
+                                                       ^^^^^^):
+    1: <section>
+    2:   <div class='one-user'>
+    3:     <div class='user-photo'>
+    4:       <img src='<%= @user.photo %>' alt='<%= @user.name %> thumbnail' />
+    5:     </div>
+    6:     <div class='user-name'>
+    7:       <h2><%= @user.name %></h2>
+  
+app/views/users/show.html.erb:4
+Started GET "/" for 127.0.0.1 at 2022-12-01 08:39:22 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/application (Duration: 11.2ms | Allocations: 1180)
+  Rendered layout layouts/application.html.erb (Duration: 30.6ms | Allocations: 4188)
+Completed 200 OK in 45ms (Views: 38.7ms | ActiveRecord: 0.8ms | Allocations: 5006)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-01 08:39:23 -0500
+Processing by UsersController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 769)
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | Allocations: 3331)
+Completed 200 OK in 28ms (Views: 25.3ms | ActiveRecord: 0.6ms | Allocations: 3707)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-01 08:39:24 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/application (Duration: 17.2ms | Allocations: 769)
+  Rendered layout layouts/application.html.erb (Duration: 29.8ms | Allocations: 3308)
+Completed 200 OK in 37ms (Views: 33.1ms | ActiveRecord: 0.7ms | Allocations: 3576)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-01 08:39:25 -0500
+Processing by UsersController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/application (Duration: 10.4ms | Allocations: 769)
+  Rendered layout layouts/application.html.erb (Duration: 29.5ms | Allocations: 3301)
+Completed 200 OK in 38ms (Views: 32.5ms | ActiveRecord: 1.1ms | Allocations: 3577)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-01 08:39:54 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/application (Duration: 62.5ms | Allocations: 6941)
+  Rendered layout layouts/application.html.erb (Duration: 64.0ms | Allocations: 7026)
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 0.5ms | Allocations: 7819)
+
+
+  
+ActionView::Template::Error (undefined method `phot' for #<User id: 1, name: "Tom", photo: "https://images.unsplash.com/photo-1503443207922-df...", bio: "Teacher from Mexico.", posts_counter: 2, created_at: "2022-11-30 23:08:03.210933000 +0000", updated_at: "2022-11-30 23:08:03.210933000 +0000">
+Did you mean?  photo):
+    3:     <% @users.each do |user| %>
+    4:       <li class='user'>
+    5:         <div class='user-photo'>
+    6:           <img src='<%= user.phot %>' alt='<%= user.name %> thumbnail' />
+    7:         </div>
+    8:         <div class='user-name'>
+    9:           <h2><%= link_to user.name, user_path(user) %></h2>
+  
+app/views/users/index.html.erb:6
+app/views/users/index.html.erb:3
+Started GET "/" for 127.0.0.1 at 2022-12-01 08:39:55 -0500
+Processing by UsersController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/application (Duration: 34.2ms | Allocations: 6325)
+  Rendered layout layouts/application.html.erb (Duration: 36.2ms | Allocations: 6404)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.6ms | Allocations: 6676)
+
+
+  
+ActionView::Template::Error (undefined method `phot' for #<User id: 1, name: "Tom", photo: "https://images.unsplash.com/photo-1503443207922-df...", bio: "Teacher from Mexico.", posts_counter: 2, created_at: "2022-11-30 23:08:03.210933000 +0000", updated_at: "2022-11-30 23:08:03.210933000 +0000">
+Did you mean?  photo):
+    3:     <% @users.each do |user| %>
+    4:       <li class='user'>
+    5:         <div class='user-photo'>
+    6:           <img src='<%= user.phot %>' alt='<%= user.name %> thumbnail' />
+    7:         </div>
+    8:         <div class='user-name'>
+    9:           <h2><%= link_to user.name, user_path(user) %></h2>
+  
+app/views/users/index.html.erb:6
+app/views/users/index.html.erb:3
+Started GET "/" for 127.0.0.1 at 2022-12-01 08:40:06 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/application (Duration: 10.4ms | Allocations: 1180)
+  Rendered layout layouts/application.html.erb (Duration: 24.9ms | Allocations: 4173)
+Completed 200 OK in 33ms (Views: 30.2ms | ActiveRecord: 0.8ms | Allocations: 4991)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-01 08:40:07 -0500
+Processing by UsersController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/application (Duration: 9.1ms | Allocations: 769)
+  Rendered layout layouts/application.html.erb (Duration: 25.6ms | Allocations: 3316)
+Completed 200 OK in 31ms (Views: 27.5ms | ActiveRecord: 0.6ms | Allocations: 3692)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-12-01 08:40:10 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 96)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 2624)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.0ms | Allocations: 2943)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-12-01 08:41:30 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 22.0ms | Allocations: 5111)
+  Rendered layout layouts/application.html.erb (Duration: 22.8ms | Allocations: 5199)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.0ms | Allocations: 5999)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for #<ActionView::Base:0x0000000000ec68>
+
+      <img src=\''.freeze;@output_buffer.append=( user.photo );@output_buffer.safe_append='\' alt=\''.freeze;@output_buffer.append=( user.name );@output_buffer.safe_append=' thumbnail\' />
+                                                  ^^^^
+Did you mean?  super):
+    1: <section>
+    2:   <div class='one-user'>
+    3:     <div class='user-photo'>
+    4:       <img src='<%= user.photo %>' alt='<%= user.name %> thumbnail' />
+    5:     </div>
+    6:     <div class='user-name'>
+    7:       <h2><%= user.name %></h2>
+  
+app/views/users/show.html.erb:4
+Started GET "/users/1" for 127.0.0.1 at 2022-12-01 08:41:32 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 24.1ms | Allocations: 4657)
+  Rendered layout layouts/application.html.erb (Duration: 27.8ms | Allocations: 4736)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.0ms | Allocations: 5003)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for #<ActionView::Base:0x0000000000ef38>
+
+      <img src=\''.freeze;@output_buffer.append=( user.photo );@output_buffer.safe_append='\' alt=\''.freeze;@output_buffer.append=( user.name );@output_buffer.safe_append=' thumbnail\' />
+                                                  ^^^^
+Did you mean?  super):
+    1: <section>
+    2:   <div class='one-user'>
+    3:     <div class='user-photo'>
+    4:       <img src='<%= user.photo %>' alt='<%= user.name %> thumbnail' />
+    5:     </div>
+    6:     <div class='user-name'>
+    7:       <h2><%= user.name %></h2>
+  
+app/views/users/show.html.erb:4
+Started GET "/" for 127.0.0.1 at 2022-12-01 08:41:41 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (17.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/application (Duration: 27.8ms | Allocations: 1115)
+  Rendered layout layouts/application.html.erb (Duration: 41.4ms | Allocations: 4047)
+Completed 200 OK in 45ms (Views: 25.9ms | ActiveRecord: 17.7ms | Allocations: 4381)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-01 08:41:41 -0500
+Processing by UsersController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/application (Duration: 10.4ms | Allocations: 769)
+  Rendered layout layouts/application.html.erb (Duration: 30.1ms | Allocations: 3316)
+Completed 200 OK in 34ms (Views: 31.2ms | ActiveRecord: 1.3ms | Allocations: 3592)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-12-01 08:41:43 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 27.1ms | Allocations: 4665)
+  Rendered layout layouts/application.html.erb (Duration: 27.8ms | Allocations: 4744)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.0ms | Allocations: 4983)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for #<ActionView::Base:0x0000000000f2a8>
+
+      <img src=\''.freeze;@output_buffer.append=( user.photo );@output_buffer.safe_append='\' alt=\''.freeze;@output_buffer.append=( user.name );@output_buffer.safe_append=' thumbnail\' />
+                                                  ^^^^
+Did you mean?  super):
+    1: <section>
+    2:   <div class='one-user'>
+    3:     <div class='user-photo'>
+    4:       <img src='<%= user.photo %>' alt='<%= user.name %> thumbnail' />
+    5:     </div>
+    6:     <div class='user-name'>
+    7:       <h2><%= user.name %></h2>
+  
+app/views/users/show.html.erb:4
+Started GET "/users/1" for 127.0.0.1 at 2022-12-01 08:44:08 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (14.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPost Load (64.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1[0m  [["author_id", 1]]
+  ↳ app/views/users/show.html.erb:16
+  Rendered users/show.html.erb within layouts/application (Duration: 261.0ms | Allocations: 10055)
+  Rendered layout layouts/application.html.erb (Duration: 385.9ms | Allocations: 24426)
+Completed 200 OK in 1023ms (Views: 317.2ms | ActiveRecord: 349.2ms | Allocations: 31683)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2022-12-01 08:44:11 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPost Load (2.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1[0m  [["author_id", 1]]
+  ↳ app/views/users/show.html.erb:16
+  Rendered users/show.html.erb within layouts/application (Duration: 15.1ms | Allocations: 843)
+  Rendered layout layouts/application.html.erb (Duration: 37.0ms | Allocations: 3380)
+Completed 200 OK in 57ms (Views: 37.3ms | ActiveRecord: 3.4ms | Allocations: 4269)
+
+
+Started GET "/users/1/posts" for 127.0.0.1 at 2022-12-01 08:44:56 -0500
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 10.8ms | Allocations: 122)
+  Rendered layout layouts/application.html.erb (Duration: 23.5ms | Allocations: 2958)
+Completed 200 OK in 29ms (Views: 27.2ms | ActiveRecord: 0.0ms | Allocations: 3743)
+
+
+Started GET "/" for 127.0.0.1 at 2022-12-01 08:45:13 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/application (Duration: 9.9ms | Allocations: 1113)
+  Rendered layout layouts/application.html.erb (Duration: 31.9ms | Allocations: 3663)
+Completed 200 OK in 39ms (Views: 35.3ms | ActiveRecord: 0.7ms | Allocations: 4027)
+
+
