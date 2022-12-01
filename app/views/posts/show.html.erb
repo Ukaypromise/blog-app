@@ -1,6 +1,6 @@
 <section>
   <div class='list-posts'>
-    <h3><%= @post.title %> by <%= @post.users.name %> </h3>
+    <h3><%= @post.title %> by <%= @post.author.name %> </h3>
     <p><%= @post.text %></p>
     <span class='like-comment'>
       Comments: <%= @post.comments_counter || 0 %>, 
@@ -12,7 +12,7 @@
       <p>No comments added!</p>
     <% else %>
       <% @post.comments.each do |comment| %>
-        <li><%= comment.users.name %>: <%= comment.text %></li>
+        <li><%= comment.author.name %>: <%= comment.text %></li>
       <% end %>
     <% end %>
   </ul> 
