@@ -1,6 +1,6 @@
 <%= form_with model: Comment, url: user_post_comments_path(@post.author, @post) do |form| %>
      <div>
-       <%= f.label 'Add a comment' %> <br>
+       <%= form.label 'Add a comment' %> <br>
        <%= form.text_area :text, placeholder: "Type In comment", row: 20, required: true %>
      </div>
 

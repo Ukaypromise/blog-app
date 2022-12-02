@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    #@post = current_user.posts.new(post_params)
+    # @post = current_user.posts.new(post_params)
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     if @post.save
@@ -23,12 +23,10 @@ class PostsController < ApplicationController
       render :new
     end
   end
- 
 
   private
 
   def post_params
     params.require(:post).permit(:title, :text)
   end
-
 end
