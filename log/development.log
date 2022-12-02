@@ -10067,3 +10067,5 @@ Processing by PostsController#show as HTML
 Completed 200 OK in 40ms (Views: 26.4ms | ActiveRecord: 7.9ms | Allocations: 4653)
 
 
+  [1m[36mUser Load (43.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
