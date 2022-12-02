@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
     def current_user
         # return the first user in the database
-        user =  User.first
+        @user =  User.first
     end
 end
