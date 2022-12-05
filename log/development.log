@@ -11710,3 +11710,28 @@ Processing by PostsController#show as HTML
 Completed 200 OK in 49ms (Views: 38.2ms | ActiveRecord: 3.6ms | Allocations: 6144)
 
 
+  [1m[36mPost Load (40.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "published_at" ASC[0m
+  [1m[36mUser Load (49.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/" for ::1 at 2022-12-05 12:57:07 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (50.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (17.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/application (Duration: 69.1ms | Allocations: 6503)
+  Rendered layout layouts/application.html.erb (Duration: 747.4ms | Allocations: 40802)
+Completed 200 OK in 870ms (Views: 760.3ms | ActiveRecord: 33.9ms | Allocations: 46809)
+
+
+Started GET "/" for ::1 at 2022-12-05 12:57:10 -0500
+Processing by UsersController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/application (Duration: 9.7ms | Allocations: 880)
+  Rendered layout layouts/application.html.erb (Duration: 23.1ms | Allocations: 3316)
+Completed 200 OK in 26ms (Views: 24.1ms | ActiveRecord: 0.6ms | Allocations: 3748)
+
+
