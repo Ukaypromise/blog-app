@@ -6,7 +6,7 @@ RSpec.describe 'Post Index', type: :feature do
       name: 'Promise',
       bio: 'Fullstack Developer',
       photo: 'http://promise.com',
-      posts_counter: 0
+      posts_counter: 2
     )
 
     @post1 = Post.create(
@@ -34,31 +34,30 @@ RSpec.describe 'Post Index', type: :feature do
   end
 
   describe 'a post index page' do
-    it 'displays the user name' do
-      visit user_posts_path(@user1)
-      expect(page).to have_content('Amarachi')
-    end
 
     it 'displays the user photo' do
       visit user_posts_path(@user1)
-      expect(page).to have_css("img[src*='http://product.com']")
+      expect(page).to have_css("img[src*='http://promise.com']")
     end
 
-    it 'displays total posts by the user' do
+    it 'displays the user name' do
       visit user_posts_path(@user1)
-      expect(page).to have_content('Number of Posts: 2')
+      expect(page).to have_content('Promise')
+    end
+
+    it 'displays total posts by the user has written' do
+      visit user_posts_path(@user1)
+      expect(page).to have_content('2')
     end
 
     it 'can see some of the post body' do
-      visit user_posts_path(@user1)
+      visit user_posts_path(@user1.id)
       expect(page).to have_content('First post')
       expect(page).to have_content('Second post')
       expect(page).to have_content('This is my first post')
       expect(page).to have_content('This is my second post')
-      expect(page).to have_content('add your comments ...')
-      expect(page).to have_selector(:link_or_button, 'Like post')
-      expect(page).to have_selector(:link_or_button, 'Add comment')
     end
+
 
     it 'shows how many comments and likes a post has' do
       visit user_posts_path(@user1)
@@ -82,12 +81,6 @@ RSpec.describe 'Post Index', type: :feature do
       visit user_posts_path(@user1)
       click_link 'Second post'
       expect(page).to have_current_path(user_post_path(@user1, @post2))
-    end
-
-    it 'can add a new post' do
-      visit user_posts_path(@user1)
-      click_link 'Add new Post'
-      expect(page).to have_current_path(new_user_post_path)
     end
   end
 end

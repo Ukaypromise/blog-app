@@ -25,7 +25,7 @@ RSpec.describe 'User Index', type: :feature do
       expect(page).to_not have_content('Luna')
     end
 
-    it 'displays the right photo' do
+    it 'displays the users profile photo' do
       visit users_path
       expect(page).to have_css("img[src*='http://promise.com']")
       expect(page).to have_css("img[src*='http://omachi.com']")
