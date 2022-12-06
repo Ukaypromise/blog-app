@@ -39,5 +39,9 @@ RSpec.describe 'Post Show', type: :feature do
             expect(page).to have_content('Victor')
         end
 
+        it 'I can see how many comments it has.' do
+            expect(@user2.comments.count).to eql(1)
+        end
+
 
 end
