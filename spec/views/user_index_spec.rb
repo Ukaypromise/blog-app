@@ -7,14 +7,14 @@ RSpec.describe 'User Index', type: :feature do
       bio: 'Fullstack Developer',
       photo: 'http://promise.com',
       posts_counter: 4
-      )
+    )
 
     @user2 = User.create(
       name: 'Omachi',
       bio: 'Ruby on Rails Developer',
       photo: 'http://omachi.com',
       posts_counter: 3
-      )
+    )
   end
 
   describe 'users index page' do

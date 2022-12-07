@@ -34,7 +34,6 @@ RSpec.describe 'Post Index', type: :feature do
   end
 
   describe 'a post index page' do
-
     it 'displays the user photo' do
       visit user_posts_path(@user1)
       expect(page).to have_css("img[src*='http://promise.com']")
@@ -57,7 +56,6 @@ RSpec.describe 'Post Index', type: :feature do
       expect(page).to have_content('This is my first post')
       expect(page).to have_content('This is my second post')
     end
-
 
     it 'shows how many comments and likes a post has' do
       visit user_posts_path(@user1)

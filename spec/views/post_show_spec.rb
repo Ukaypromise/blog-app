@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Post Show', type: :feature do
-    before(:each) do
+  before(:each) do
     @user1 = User.create(
       name: 'Victor',
       bio: 'Fullstack Developer',
@@ -31,10 +31,9 @@ RSpec.describe 'Post Show', type: :feature do
 
     Like.create(post: @post1, author: @user1)
     Like.create(post: @post2, author: @user1)
-        
-    end
+  end
 
-        describe 'A specific post with title, comments and counter' do
+  describe 'A specific post with title, comments and counter' do
     it 'displays the post title' do
       visit user_post_path(@user1, @post1)
       expect(page).to have_content('First post')

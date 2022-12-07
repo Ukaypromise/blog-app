@@ -7,7 +7,7 @@ RSpec.describe 'User Show', type: :feature do
       bio: 'Fullstack Developer',
       photo: 'http://promise.com',
       posts_counter: 2
-      )
+    )
 
     @post1 = Post.create(
       author: @user,
