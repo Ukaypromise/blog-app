@@ -1,47 +1,69 @@
 require 'rails_helper'
 
 RSpec.describe 'Post Show', type: :feature do
-
     before(:each) do
-        @user1 = User.create(name: 'Victor', photo: 'https://ibedc.com/filesupload/imagebuild/625350c770c886.68494374.jpg', bio: 'Developer',
-            post_counter: 0)
-        @user1.save!
-        @user2 = User.create(name: 'Uka', photo: 'https://ibedc.com/filesupload/imagebuild/625350c770c886.68494374.jpg', bio: 'Front End Developer',
-            post_counter: 0)
-        @user3 = User.create(name: 'Demond', photo: 'https://ibedc.com/filesupload/imagebuild/625350c770c886.68494374.jpg', bio: 'Backend Developer',
-            post_counter: 0)
+    @user1 = User.create(
+      name: 'Victor',
+      bio: 'Fullstack Developer',
+      photo: 'http://victor.com',
+      posts_counter: 2
+    )
 
-        visit root_path
+    @post1 = Post.create(
+      author: @user1,
+      title: 'First post',
+      text: 'This is my first post',
+      comments_counter: 0,
+      likes_counter: 0
+    )
 
-        @post1 = Post.create(title: 'My First Post', text: 'Walking a new', comments_count: 0, likes_count: 2,
-                                 author: @user1)
-        @post2 = Post.create(title: 'My Second Post', text: 'Making us Fit', comments_count: 0, likes_count: 1,
-                                 author: @user1)
-        @post3 = Post.create(title: 'Third Post', text: 'The concept in creed', comments_count: 0, likes_count: 0,
-                                 author: @user1)
+    @post2 = Post.create(
+      author: @user1,
+      title: 'Second post',
+      text: 'This is my second post',
+      comments_counter: 0,
+      likes_counter: 0
+    )
 
-        @comment1 = Comment.create(text: 'Comment One', author: @user2,
-                                       post: @post1)
-        @comment2 = Comment.create(text: 'Comment Two', author: @user3, post: @post1)
-        @comment3 = Comment.create(text: 'Comment Three', author: @user4, post: @post1)
+    Comment.create(post: @post1, author: @user1, text: 'Hi everytone, nice to meet you!')
+    Comment.create(post: @post1, author: @user1, text: 'Hello loves, welcome!!')
+    Comment.create(post: @post2, author: @user1, text: 'How are you?, been a while')
 
-        @like = Like.create(post_id: @post1.id, author_id: @user2.id)
-      
-        visit user_post_path(@user1, @post1)
-    
-        end
+    Like.create(post: @post1, author: @user1)
+    Like.create(post: @post2, author: @user1)
+        
+    end
 
-        it 'I can see the post\'s title.' do
-            expect(page).to have_content('My First Post')
-        end
+        describe 'A specific post with title, comments and counter' do
+    it 'displays the post title' do
+      visit user_post_path(@user1, @post1)
+      expect(page).to have_content('First post')
+    end
 
-        it 'I can see who wrote the post.' do
-            expect(page).to have_content('Victor')
-        end
+    it 'displays the user who wrote the post' do
+      visit user_post_path(@user1, @post1)
+      expect(page).to have_content('Victor')
+    end
 
-        it 'I can see how many comments it has.' do
-            expect(@user2.comments.count).to eql(1)
-        end
+    it 'displays total comments and likes' do
+      visit user_post_path(@user1, @post1)
+      expect(page).to have_content('2')
+    end
 
+    it 'displays total comments and likes' do
+      visit user_post_path(@user1, @post2)
+      expect(page).to have_content('1')
+    end
 
+    it 'shows other parts of the post body' do
+      visit user_post_path(@user1, @post1)
+      expect(page).to have_content('This is my first post')
+    end
+
+    it 'shows username and comment of each commentor' do
+      visit user_post_path(@user1, @post1)
+      expect(page).to have_content('Victor: Hi everytone, nice to meet you!')
+      expect(page).to have_content('Victor: Hello loves, welcome!!')
+    end
+  end
 end
