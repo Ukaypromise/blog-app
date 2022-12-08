@@ -48,7 +48,7 @@ RSpec.describe 'User Show', type: :feature do
     expect(page).to have_content('2')
   end
 
-  it 'displays all the available users posts' do
+  it 'displays the first three posts of a user' do
     visit user_path(@user)
     expect(page).to have_content('First post')
     expect(page).to have_content('Second post')
@@ -71,9 +71,9 @@ RSpec.describe 'User Show', type: :feature do
     expect(page).to have_current_path(user_post_path(@user, @post1))
   end
 
-  it 'click a users post, it redirects to the posts show page' do
+  it 'click a see all posts, it redirects me to the users posts index page' do
     visit user_path(@user)
-    click_link 'Second post'
-    expect(page).to have_current_path(user_post_path(@user, @post2))
+    click_link 'see all posts'
+    expect(page).to have_current_path(user_posts_path(@user))
   end
 end
