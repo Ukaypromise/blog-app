@@ -16061,3 +16061,105 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 87ms (Views: 49.2ms | ActiveRecord: 24.5ms | Allocations: 11646)
 
 
+Started GET "/users/1/posts" for ::1 at 2022-12-08 05:36:35 -0500
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (11.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1[0m  [["author_id", 1]]
+  ↳ app/views/posts/index.html.erb:13
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1 ORDER BY "comments"."created_at" DESC LIMIT $2[0m  [["post_id", 1], ["LIMIT", 5]]
+  ↳ app/views/posts/index.html.erb:23
+  Rendered posts/index.html.erb within layouts/application (Duration: 59.0ms | Allocations: 8605)
+  Rendered navbar/_header.html.erb (Duration: 1.3ms | Allocations: 433)
+  Rendered layout layouts/application.html.erb (Duration: 191.3ms | Allocations: 22945)
+Completed 200 OK in 511ms (Views: 192.8ms | ActiveRecord: 198.3ms | Allocations: 32968)
+
+
+Started GET "/users/1/posts" for ::1 at 2022-12-08 05:36:40 -0500
+Processing by PostsController#index as */*
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1[0m  [["author_id", 1]]
+  ↳ app/views/posts/index.html.erb:13
+  [1m[36mComment Load (2.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1 ORDER BY "comments"."created_at" DESC LIMIT $2[0m  [["post_id", 1], ["LIMIT", 5]]
+  ↳ app/views/posts/index.html.erb:23
+  Rendered posts/index.html.erb within layouts/application (Duration: 18.4ms | Allocations: 1563)
+  Rendered navbar/_header.html.erb (Duration: 1.5ms | Allocations: 360)
+  Rendered layout layouts/application.html.erb (Duration: 31.4ms | Allocations: 4180)
+Completed 200 OK in 49ms (Views: 29.4ms | ActiveRecord: 6.6ms | Allocations: 6379)
+
+
+Started GET "/" for ::1 at 2022-12-08 05:37:24 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 787)
+  Rendered navbar/_header.html.erb (Duration: 2.1ms | Allocations: 425)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 3700)
+Completed 200 OK in 31ms (Views: 20.6ms | ActiveRecord: 1.8ms | Allocations: 5864)
+
+
+Started GET "/" for ::1 at 2022-12-08 05:37:24 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 629)
+  Rendered navbar/_header.html.erb (Duration: 1.6ms | Allocations: 360)
+  Rendered layout layouts/application.html.erb (Duration: 25.6ms | Allocations: 3248)
+Completed 200 OK in 45ms (Views: 28.3ms | ActiveRecord: 1.5ms | Allocations: 4978)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2022-12-08 05:37:27 -0500
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 48ms (ActiveRecord: 0.7ms | Allocations: 3405)
+
+
+Started GET "/" for ::1 at 2022-12-08 05:37:27 -0500
+Processing by UsersController#index as TURBO_STREAM
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms | Allocations: 390)
+
+
+Started GET "/" for ::1 at 2022-12-08 05:37:32 -0500
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 254)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-12-08 05:37:32 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 12.9ms | Allocations: 733)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 75.3ms | Allocations: 3526)
+  Rendered navbar/_header.html.erb (Duration: 0.9ms | Allocations: 117)
+  Rendered layout layouts/application.html.erb (Duration: 85.9ms | Allocations: 6105)
+Completed 200 OK in 96ms (Views: 92.9ms | ActiveRecord: 0.0ms | Allocations: 7446)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-12-08 05:37:33 -0500
+Processing by Devise::SessionsController#new as */*
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.7ms | Allocations: 131)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 14.2ms | Allocations: 1236)
+  Rendered navbar/_header.html.erb (Duration: 2.1ms | Allocations: 86)
+  Rendered layout layouts/application.html.erb (Duration: 28.6ms | Allocations: 3574)
+Completed 200 OK in 36ms (Views: 33.6ms | ActiveRecord: 0.0ms | Allocations: 4292)
+
+
