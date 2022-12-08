@@ -26,11 +26,11 @@ gem 'turbo-rails'
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem 'stimulus-rails'
 
-# Add Devise for authentication 
+# Add Devise for authentication
 gem 'devise'
 
 # Add encryption for password
-gem "bcrypt", "~> 3.1.7"
+gem 'bcrypt', '~> 3.1.7'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'ffi'
