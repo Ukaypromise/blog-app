@@ -44,6 +44,11 @@ RSpec.describe 'Post Index', type: :feature do
       expect(page).to have_content('Promise')
     end
 
+    it 'shows the title of the post' do
+    visit user_posts_path(@user1.id)
+    expect(page).to have_content('This is my first post')
+    end
+
     it 'displays total posts by the user has written' do
       visit user_posts_path(@user1)
       expect(page).to have_content('2')
@@ -63,10 +68,9 @@ RSpec.describe 'Post Index', type: :feature do
       expect(page).to have_content('Comments: 1, Likes: 1')
     end
 
-    it 'shows comments in a post' do
-      visit user_posts_path(@user1)
+    it 'shows first comments of a post' do
+      visit user_posts_path(@user1.id, @post1)
       expect(page).to have_content('Hi everytone, nice to meet you!')
-      expect(page).to have_content('Hello loves, welcome!!')
     end
 
     it 'it redirects me to a posts show page when the post is clicked' do
