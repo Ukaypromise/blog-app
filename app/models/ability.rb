@@ -1,17 +1,24 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(user)
+ 
 
     def initialize(user)
-      if user.admin
-        can :manage, :all
-      else
-        can :destroy, Post, author: user
-        can :destroy, Comment, author: user
-      end
-    end
+    
+      can :read, Post
 
+    return unless user.present?
+
+    can :manage, Post, user_id: user.id
+    can %i[create destroy], Comment
+
+    return unless user.role == 'admin'
+
+    can :manage, :all
+
+
+
+    end
 
     # Define abilities for the passed in user here. For example:
     #
@@ -39,5 +46,4 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
-  end
 end
