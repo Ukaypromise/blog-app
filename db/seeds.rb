@@ -9,7 +9,7 @@
 first_user = User.create(name: 'Promise', photo: 'https://images.unspl
 ash.com/photo-1508921912186-1d1a45ebb3c1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG9
 0by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80', bio: 'Teacher from 
-Mexico.', email: 'admin1@admin.com', password: 'password')
+Mexico.', email: 'admin1@admin.com', password: 'password', role: 'admin')
 
 second_user = User.create(name: 'James', photo: 'https://images.unsplash.com/photo-1508922088233-a07c9cc6972f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80', bio: 'Teacher from Poland.', email: 'admin2@admin.com', password: 'password')
 
