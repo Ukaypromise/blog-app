@@ -32,6 +32,9 @@ gem 'devise'
 # Add encryption for password
 gem 'bcrypt', '~> 3.1.7'
 
+# Authorization for Rails
+gem 'cancancan', '~> 1.9'
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'ffi'
 gem 'jbuilder'
