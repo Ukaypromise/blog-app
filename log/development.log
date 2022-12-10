@@ -25059,3 +25059,97 @@ Processing by PostsController#show as TURBO_STREAM
 Completed 200 OK in 34ms (Views: 21.8ms | ActiveRecord: 1.6ms | Allocations: 7551)
 
 
+Started GET "/users/1/posts/5" for ::1 at 2022-12-09 12:10:59 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"5"}
+  [1m[36mUser Load (10.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  Rendered likes/_add_like.html.erb (Duration: 1.2ms | Allocations: 234)
+  [1m[36mComment Load (1.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 5]]
+  ↳ app/views/posts/show.html.erb:16
+  Rendered comments/_add_comment.html.erb (Duration: 25.7ms | Allocations: 406)
+  Rendered posts/show.html.erb within layouts/application (Duration: 67.1ms | Allocations: 2839)
+  Rendered navbar/_header.html.erb (Duration: 1.5ms | Allocations: 350)
+  Rendered layout layouts/application.html.erb (Duration: 203.2ms | Allocations: 5440)
+Completed 200 OK in 1353ms (Views: 202.7ms | ActiveRecord: 716.9ms | Allocations: 10548)
+
+
+Started GET "/users/1/posts/5" for ::1 at 2022-12-09 12:11:04 -0500
+Processing by PostsController#show as */*
+  Parameters: {"user_id"=>"1", "id"=>"5"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (3.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  Rendered likes/_add_like.html.erb (Duration: 3.2ms | Allocations: 234)
+  [1m[36mComment Load (4.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 5]]
+  ↳ app/views/posts/show.html.erb:16
+  Rendered comments/_add_comment.html.erb (Duration: 1.6ms | Allocations: 406)
+  Rendered posts/show.html.erb within layouts/application (Duration: 25.1ms | Allocations: 2833)
+  Rendered navbar/_header.html.erb (Duration: 1.5ms | Allocations: 350)
+  Rendered layout layouts/application.html.erb (Duration: 40.3ms | Allocations: 5434)
+Completed 200 OK in 64ms (Views: 39.0ms | ActiveRecord: 10.4ms | Allocations: 7536)
+
+
+Started GET "/users/confirmation/new" for ::1 at 2022-12-09 12:11:14 -0500
+Processing by Devise::ConfirmationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/confirmations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 15.7ms | Allocations: 212)
+  Rendered devise/shared/_links.html.erb (Duration: 4.7ms | Allocations: 618)
+  Rendered devise/confirmations/new.html.erb within layouts/application (Duration: 75.0ms | Allocations: 2322)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/navbar/_header.html.erb:21
+  Rendered navbar/_header.html.erb (Duration: 13.6ms | Allocations: 1380)
+  Rendered layout layouts/application.html.erb (Duration: 103.7ms | Allocations: 6145)
+Completed 200 OK in 128ms (Views: 124.8ms | ActiveRecord: 0.8ms | Allocations: 7197)
+
+
+Started GET "/users/confirmation/new" for ::1 at 2022-12-09 12:11:19 -0500
+Processing by Devise::ConfirmationsController#new as */*
+  Rendering layout layouts/application.html.erb
+  Rendering devise/confirmations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 184)
+  Rendered devise/confirmations/new.html.erb within layouts/application (Duration: 12.3ms | Allocations: 1011)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/navbar/_header.html.erb:21
+  Rendered navbar/_header.html.erb (Duration: 7.4ms | Allocations: 1171)
+  Rendered layout layouts/application.html.erb (Duration: 34.3ms | Allocations: 4433)
+Completed 200 OK in 38ms (Views: 35.4ms | ActiveRecord: 0.8ms | Allocations: 4812)
+
+
+Started GET "/users/2/posts/2" for ::1 at 2022-12-09 12:11:47 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"user_id"=>"2", "id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (20.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `show'
+Completed 404 Not Found in 30ms (ActiveRecord: 21.0ms | Allocations: 2304)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=2):
+  
+app/controllers/posts_controller.rb:8:in `show'
+Started GET "/users/2/posts/2" for ::1 at 2022-12-09 12:11:48 -0500
+Processing by PostsController#show as */*
+  Parameters: {"user_id"=>"2", "id"=>"2"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:8:in `show'
+Completed 404 Not Found in 15ms (ActiveRecord: 2.6ms | Allocations: 2278)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=2):
+  
+app/controllers/posts_controller.rb:8:in `show'
